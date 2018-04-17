@@ -1,11 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
+import {observer} from 'mobx-react';
 
 // Fontawesome
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faAngleLeft from '@fortawesome/fontawesome-free-solid/faAngleLeft';
 import faAngleRight from '@fortawesome/fontawesome-free-solid/faAngleRight';
 import faPlusCircle from '@fortawesome/fontawesome-free-solid/faPlusCircle';
+
 
 // Components
 import ChannelNavLink from './ChannelNavLink';
@@ -17,14 +20,15 @@ class SideNav extends React.Component {
   }
 
   render () {
-    const channelLinks = [{name: "all"}].map(
+    console.log(this.props.channelStore.channels)
+    const channelLinks = this.props.channelStore.channels.map(
       channel => <ChannelNavLink key={channel.name} channel={channel} />
     )
     return (
       <div>
         <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
           <li className="nav-item" data-toggle="tooltip" data-placement="right">
-            <Link className="nav-link heading" to="/createChannel">
+            <Link className="nav-link heading" data-toggle="modal" data-target="#newChannelModal" to="/createChannel">
               <span className="nav-link-text">Channels</span>
               <FontAwesomeIcon icon={faPlusCircle} className="ml-2"/>
             </Link>
@@ -46,4 +50,4 @@ class SideNav extends React.Component {
   }
 }
 
-export default SideNav;
+export default withRouter(observer(SideNav));

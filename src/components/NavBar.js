@@ -4,6 +4,7 @@ import {observer} from 'mobx-react';
 // Components
 import SideNav from './SideNav';
 import AuthButton from './AuthButton';
+import CreateChannel from './CreateChannel';
 
 function NavBar(props) {
   return (
@@ -13,7 +14,7 @@ function NavBar(props) {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarResponsive">
-        <SideNav />
+        <SideNav channelStore={props.channelStore}/>
         <ul className="navbar-nav ml-auto">
           <span className="navbar-text">
             {props.authStore.currentUser}

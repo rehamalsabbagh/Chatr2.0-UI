@@ -27,7 +27,7 @@ class AuthStore {
   }
 
   storeUser(type) {
-    return axios.post(`http://localhost:8000/${type}/`, {
+    return axios.post(`http://192.168.100.54/${type}/`, { 
       username: this.username,
       password: this.password
     })

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function Modal(props) {
   return (
     <div className="modal fade"
@@ -23,7 +24,7 @@ function Modal(props) {
             </button>
             <button className="btn btn-primary"
               type="button"
-              onClick={props.clickHandler}>
+              onClick={props.clickHandler}>Add
               {props.type}
             </button>
           </div>
