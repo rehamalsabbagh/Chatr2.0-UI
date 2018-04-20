@@ -1,3 +1,69 @@
+@font-face {
+   font-family: myFirstFont;
+   src: url('GeosansLight.ttf');
+}
+
+.card-body {
+    padding: 5px 10px;
+}
+
+.hamsaChannel{
+  background-image: url('hamsa.jpg');
+  background-size: cover; 
+
+}
+
+.username-name{
+   font-size: 19px; 
+   font-weight: 600;
+}
+
+.timestamp{
+    font-size: 12px;
+    color: #888888;
+}
+
+.channelName{
+  font-size: 20px;
+}
+
+footer.sticky-footer {
+    position: fixed !important;
+    bottom: 0 !important;
+}
+
+.input-group.mb-3.msgBox {
+    position: fixed;
+    bottom: 40px;
+    background-color: #eaecef;
+    padding: 20px 40px;
+    width: 81%;
+    right: 0;
+}
+
+.ourloader{
+  background-image: url('loader.jpg');
+  background-size: contain;
+  margin: auto;
+  display: block;
+  border-radius: 500px;
+  -webkit-animation: spin 0.3s linear infinite; /* Safari */
+  animation: spin 0.3s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+* {
+   font-family: myFirstFont;
+}
 html {
   position: relative;
   min-height: 100%;
@@ -12,11 +78,16 @@ body.sticky-footer {
 }
 
 body.sticky-footer .content-wrapper {
-  min-height: calc(100vh - 56px - 56px);
+/*  min-height: calc(100vh - 56px - 56px);*/
 }
 
 body.fixed-nav {
   padding-top: 56px;
+}
+
+.card {
+    margin: 20px 0px;
+  background-color: #ffffff6e;
 }
 
 .content-wrapper {
@@ -155,6 +226,7 @@ body.fixed-nav {
     position: absolute;
     top: 0;
     left: 0;
+    overflow-y:auto;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;

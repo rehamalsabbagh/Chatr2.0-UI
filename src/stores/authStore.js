@@ -37,6 +37,8 @@ class AuthStore {
         localStorage.setItem("token", token);
         this.currentUser = username;
         this.token = token;
+        console.log('here is our token');
+        console.log(this.token);
         this.resetForm();
       })
       .catch(err => {

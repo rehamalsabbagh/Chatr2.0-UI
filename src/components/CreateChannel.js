@@ -28,7 +28,7 @@ function CreateChannel(props) {
     body: body,
     clickHandler: createChannel,
     authStore: authStore,
-    type: 'createChannel'
+    type: 'Create Channel'
   }
   return <Modal {...modalProps} />;
 }

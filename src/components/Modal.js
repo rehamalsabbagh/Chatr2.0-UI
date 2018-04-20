@@ -24,7 +24,7 @@ function Modal(props) {
             </button>
             <button className="btn btn-primary"
               type="button"
-              onClick={props.clickHandler}>Add
+              onClick={props.clickHandler}>
               {props.type}
             </button>
           </div>

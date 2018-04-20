@@ -9,7 +9,6 @@ class ChannelStore {
     this.loading = true;
     this.channelName = '';
     this.error = [];
-    this.currentchannelid = '';
     this.message = '';
     this.messages = [];
   }
@@ -54,6 +53,8 @@ class ChannelStore {
   }
 
   createNewMessage(username, token, currentChannelId){
+    // this.loading = true;
+    console.log(currentChannelId);
     return axios.post(
       `http://192.168.100.54/channels/${currentChannelId}/send/`,
       { message: this.message },
@@ -66,13 +67,11 @@ class ChannelStore {
         this.fetchMessages(currentChannelId,token);
       })
       .catch(err => console.error(err));
-
-
-
-
   }
 
   fetchMessages(currentChannelId,token) {
+    // this.loading = true;
+    console.log(currentChannelId);
     return axios.get(`http://192.168.100.54/channels/${currentChannelId}/`,
       { headers: {"Authorization": `JWT ${token}`} },
       )
@@ -92,11 +91,15 @@ class ChannelStore {
 decorate(ChannelStore, {
   channels: observable,
   loading: observable,
-  query: observable,
+  messages: observable,
+  channelName :observable,
+  error : observable,
+  message : observable,
 })
 
 const channelStore =  new ChannelStore();
 channelStore.fetchChannels();
+
 //console.log('From channelStore');
 
 export default channelStore;
